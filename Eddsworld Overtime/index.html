@@ -56,15 +56,15 @@
       z-index: 0;
     }
 
-    /* ── floating cola cans ── */
-    .can { position: fixed; font-size: 2.4rem; opacity: .13; animation: floatCan linear infinite; pointer-events: none; z-index: 0; }
-    .can:nth-child(1) { left:5%;  animation-duration:14s; animation-delay:0s;   top:110%; }
-    .can:nth-child(2) { left:20%; animation-duration:18s; animation-delay:3s;   top:110%; }
-    .can:nth-child(3) { left:40%; animation-duration:12s; animation-delay:7s;   top:110%; }
-    .can:nth-child(4) { left:60%; animation-duration:20s; animation-delay:1s;   top:110%; }
-    .can:nth-child(5) { left:80%; animation-duration:16s; animation-delay:5s;   top:110%; }
-    .can:nth-child(6) { left:92%; animation-duration:22s; animation-delay:9s;   top:110%; }
-    @keyframes floatCan {
+    /* ── floating items ── */
+    .float-item { position: fixed; width: 64px; height: 64px; opacity: .15; animation: floatItem linear infinite; pointer-events: none; z-index: 0; }
+    .float-item img { width: 100%; height: 100%; object-fit: contain; }
+    .float-item:nth-child(1) { left:5%;  animation-duration:14s; animation-delay:0s;   top:110%; }
+    .float-item:nth-child(2) { left:20%; animation-duration:18s; animation-delay:3s;   top:110%; }
+    .float-item:nth-child(3) { left:40%; animation-duration:12s; animation-delay:7s;   top:110%; }
+    .float-item:nth-child(4) { left:60%; animation-duration:20s; animation-delay:1s;   top:110%; }
+    .float-item:nth-child(5) { left:80%; animation-duration:16s; animation-delay:5s;   top:110%; }
+    @keyframes floatItem {
       0%   { transform: translateY(0)   rotate(0deg); }
       100% { transform: translateY(-120vh) rotate(360deg); }
     }
@@ -332,26 +332,64 @@
     }
     footer a { color: var(--green); text-decoration: none; }
 
-    /* ── expired state ── */
-    #expired-msg {
-      display: none;
+    /* ── project info ── */
+    .project-info {
+      max-width: 540px;
+      background: rgba(255,255,255,.04);
+      border: 3px solid var(--green);
+      border-radius: 10px;
+      box-shadow: 5px 5px 0 var(--dkgreen);
+      padding: 1.4rem 1.8rem;
+      font-size: clamp(.85rem, 2vw, 1rem);
+      line-height: 1.8;
+      color: rgba(255,255,255,.8);
+      text-align: center;
+      margin-bottom: 2.4rem;
+      animation: fadeIn .5s 1s both;
+    }
+    .project-info .title-line {
       font-family: 'Bangers', cursive;
-      font-size: clamp(2rem, 8vw, 4rem);
+      font-size: clamp(1.4rem, 5vw, 2rem);
       color: var(--yellow);
-      text-shadow: 4px 4px 0 var(--red);
-      animation: badgePop .5s both;
+      letter-spacing: .08em;
+      margin-bottom: .5rem;
+    }
+    .project-info .divider-line {
+      color: var(--green);
+      margin: .4rem 0;
+    }
+    .project-info .highlight {
+      color: var(--yellow);
+      font-weight: 900;
+    }
+    .project-info .host-line {
+      color: rgba(255,255,255,.6);
+      margin: .6rem 0;
+    }
+    .project-info a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 700;
+      transition: color .2s, text-shadow .2s;
+    }
+    .project-info a:hover {
+      color: var(--yellow);
+      text-shadow: 0 0 12px var(--green);
+    }
+    .project-info .closing {
+      color: rgba(255,255,255,.7);
+      font-style: italic;
     }
   </style>
 </head>
 <body>
 
-  <!-- floating cola cans -->
-  <div class="can">🥤</div>
-  <div class="can">🥤</div>
-  <div class="can">🥤</div>
-  <div class="can">🥤</div>
-  <div class="can">🥤</div>
-  <div class="can">🥤</div>
+  <!-- floating items -->
+  <div class="float-item"><img src="cola.png" alt=""></div>
+  <div class="float-item"><img src="mirror.png" alt=""></div>
+  <div class="float-item"><img src="susan.png" alt=""></div>
+  <div class="float-item"><img src="bacon.png" alt=""></div>
+  <div class="float-item"><img src="ringo.png" alt=""></div>
 
   <div class="wrapper">
 
@@ -373,9 +411,21 @@
       <div class="unit"><div class="unit-num" id="s">00</div><div class="unit-label">Secs</div></div>
     </div>
 
-    <div id="expired-msg">🎉 It's HERE! Watch Now! 🎉</div>
+    <div class="project-info">
+      <div class="title-line">Welcome to the project: OVERTIME SPARES!</div>
+      <div class="divider-line">𓏵•၊၊၊|။|||။၊|။𓏵</div>
+      <div>This is a <span class="highlight">FAN ANIMATION MAP!</span></div>
+      <div>MAP = <span class="highlight">Multi Animator Project</span></div>
+      <div class="divider-line">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</div>
+      <div>This project was inspired by the video <span class="highlight">"spares"</span></div>
+      <div>This is a collaboration where the animators can draw all the different clones of the main 4!</div>
+      <div class="divider-line">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</div>
+      <div class="host-line">This is hosted by:</div>
+      <div>♡ <a href="https://www.tiktok.com/@noobie_leep?lang=en" target="_blank" rel="noopener">@noobie_leep</a> & <a href="https://www.tiktok.com/@germanscythe?lang=en" target="_blank" rel="noopener">@germanscythe</a> ♡</div>
+      <div class="divider-line">✦•┈๑⋅⋯ ⋯⋅๑┈•✦</div>
+      <div class="closing">Hope you all enjoy this and have a nice day ‹𝟹</div>
+    </div>
 
-    <!-- Note: June has 30 days, so targeting June 30 2025 -->
     <div class="target">Dropping <span>July 1, 2026</span> — Mark your calendar!</div>
 
     <div class="video-wrap">
